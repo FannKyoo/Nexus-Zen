@@ -606,3 +606,44 @@ img {
         font-size: 34px;
     }
 }
+
+/* Mantra Animasi Masuk (Fade & Zoom-in) */
+/* Keyframes dengan sedikit overshoot */
+@keyframes SiapaDiaZoom {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  70% {
+    opacity: 1;
+    transform: scale(1.05);   /* sedikit melebihi ukuran asli */
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);      /* kembali ke ukuran normal */
+  }
+}
+
+.modal-dialog {
+  width: 90%;
+  max-width: 800px;
+  margin: auto;
+  /* Bootstraps memberi transform saat .fade/.show, jadi kita reset */
+  transform: none !important;   /* tetap diperlukan jika Anda butuh posisi tengah */
+}
+
+/* Keyframes dengan sedikit “overshoot” untuk efek pop */
+@keyframes SiapaDiaZoom {
+  0%   { opacity: 0; transform: scale(0.9); }
+  70%  { opacity: 1; transform: scale(1.05); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+/* Kelas yang dipanggil JS ketika modal harus muncul */
+.modal-animate {
+  animation-name: SiapaDiaZoom;
+  animation-duration: 0.7s;               /* lebih responsif */
+  animation-timing-function: cubic-bezier(0.68, -0.55, 0.27, 1.55); /* overshoot */
+  animation-fill-mode: forwards;          /* mempertahankan state akhir */
+  will-change: transform, opacity;
+}
