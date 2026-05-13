@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
+from django.templatetags.static import static
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -41,6 +42,22 @@ INSTALLED_APPS = [
     'kampus_app',
     'import_export',
 ]
+
+UNFOLD = {
+    "SITE_TITLE": "Nexus Zen Admin",
+    "SITE_HEADER": "Nexus Zen",
+    
+    "SITE_FAVICON": lambda request: static("images/favicon.png"),
+
+    # === PERBAIKAN FAVICON DI SINI (Cuma pakai 1 baris) ===
+    "SITE_ICON": lambda request: static("images/favicon.png"), 
+    
+    # === LOGO UTAMA TETAP SAMA ===
+    "SITE_LOGO": {
+        "light": lambda request: static("images/nexus.png"),
+        "dark": lambda request: static("images/nexus.png"),
+    },
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

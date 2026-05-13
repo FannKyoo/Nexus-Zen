@@ -45,3 +45,6 @@ class Pesan(models.Model):
 
     def __str__(self):
         return f"Pesan dari {self.nama}"
+    
+    class Meta:
+        verbose_name_plural = "Pesan"
