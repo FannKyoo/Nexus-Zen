@@ -12,5 +12,5 @@ Pastikan Python sudah terinstal. Buka terminal/CMD di dalam folder project ini, 
 
 **🔑 Akses Admin Panel:**
 - URL: `http://127.0.0.1:8000/admin/`
-- Username: [Isi_Username_Admin_Kamu]
-- Password: [Isi_Password_Admin_Kamu]
+- Username: [fannkyoo]
+- Password: [476386]
