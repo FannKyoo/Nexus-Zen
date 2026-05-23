@@ -10,19 +10,19 @@ class Jurusan(models.Model):
     class Meta:
         verbose_name_plural = "Jurusan"
 
-class Mahasiswa(models.Model):
+class Pengunjung(models.Model):
     no=models.AutoField(auto_created = True, primary_key=True, serialize=True)
     nama=models.CharField(max_length=100, blank=False, null=False)
     handphone=models.CharField(max_length=12, default="", blank=False, null=False)
     email=models.EmailField(max_length=100, blank=False, null=False)
-    nim=models.CharField(max_length=12, blank=False, null=False) 
-    id_jurusan=models.ForeignKey(Jurusan, on_delete=models.SET_NULL, null=True)
+    id=models.CharField(max_length=12, blank=False, null=False) 
+    jurusan=models.ForeignKey(Jurusan, on_delete=models.SET_NULL, null=True)
     timestamp=models.TimeField(default=timezone.now, null=True, blank=True)
 
     def __str__(self):
         return self.nama
     class Meta:
-        verbose_name_plural = "Tabel Mahasiswa"
+        verbose_name_plural = "Tabel Pengunjung"
 
 class Berita(models.Model):
     judul = models.CharField(max_length=200, blank=False, null=False)

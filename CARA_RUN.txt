@@ -1,0 +1,7 @@
+Cara Menjalankan Project Nexus Zen:
+1. Ekstrak file ZIP ini.
+2. Buat virtual environment baru & aktifkan.
+3. Install dependensi: pip install -r requirements.txt
+4. Jalankan server: python manage.py runserver
+5. Akses web utama di: http://127.0.0.1:8000/
+6. Akses halaman admin di: http://127.0.0.1:8000/admin/

@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.core.paginator import Paginator # 1. IMPORT INI DULU
-from .models import Mahasiswa, Berita, Pesan
+from .models import Pengunjung, Berita, Pesan
 
 def beranda(request):
     pesan_sukses = False
@@ -20,7 +20,7 @@ def beranda(request):
     page_number = request.GET.get('page')
     data_berita_paged = paginator.get_page(page_number)
 
-    data_pengunjung = Mahasiswa.objects.all()
+    data_pengunjung = Pengunjung.objects.all()
 
     context = {
         'berita_list': data_berita_paged, # 4. Masukkan data yang sudah di-potong-potong ini
